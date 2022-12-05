@@ -1,6 +1,6 @@
 Some experimental Pi calculations using Python3 + gmpy2.
 
-Scripts & BLOGs (in Japanese):
+Scripts & BLOGs (Zenn) (in Japanese):
 
 * pigl.py: Gauss--Legendre algorithm, basic Python int (fixed floating point)
 * piglgm.py: Gauss--Legendre algorithm with gmpy2
