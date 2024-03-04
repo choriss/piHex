@@ -129,7 +129,7 @@ def bbpmpgmp(digstart, digdisp):
                                    digdisp, 0, 5))
 #        futures.append(exec.submit(bbpmpth, digdiv, digstart, digstart,
 #                                   digdisp, 0, 6))
-        print('start future #0-', len(futures))
+        # print('start future #0-', len(futures))
         rs = bbpmpth(digdiv, digstart, digstart, digdisp, 0, 6)
 #
 ## divide process (into 4) by term
@@ -147,11 +147,11 @@ def bbpmpgmp(digstart, digdisp):
 #        print('start future #0-', len(futures))
 #        rs = bbpmpth(0, digstart, digstart, digdisp, 0, 6)
 
-        print('done future #', len(futures))
+        # print('done future #', len(futures))
         rss = mpfr(8.) - rs
         for i in range(len(futures)):
             rss += pm[i] * futures[i].result()
-            print('done future #', i)
+            # print('done future #', i)
         rss = gmpy2.frac(rss)
 #    print('---')
     for k in range(digstart, digstart + overdig):
@@ -197,11 +197,11 @@ def bbpmpgmp2(digstart, digdisp):
             nd0, nd1 = nd1, int(digstart / ndiv * (i + 1))
             futures.append(exec.submit(bbpmpth2, nd0, nd1, digstart, digdisp))
         nd0, nd1 = nd1, digstart
-        print('start future #0-', len(futures))
+        # print('start future #0-', len(futures))
         rss = bbpmpth2(nd0, nd1, digstart, digdisp)
         for i in range(len(futures)):
             rss += futures[i].result()
-            print('done future #', i)
+            # print('done future #', i)
         rss = gmpy2.frac(rss)
 #    print('---')
     for k in range(digstart, digstart + overdig):
